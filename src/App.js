@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import './App.css';
 import Example from './components/example.js'
 
+/*
+ * This will be your index page regardless of whether you are using 1 
+ * or multiple pages.
+ */
 function App() {
   return (
     <div className="App">
