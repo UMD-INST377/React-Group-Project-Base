@@ -1,6 +1,19 @@
-# This is your readme
-You are required to fill it in with documentation similar to that found in the Sequelize example for the course as part of your final project.
+## Installing Guide
+1. Clone this repository through Github Desktop or through Terminal.
+2. Open repository in VSCode Terminal or Terminal application.
+3. type `npm install` into terminal to install your `node_modules`.
 
-### How to use Markdown
-Markdown is a text notation system used in Discord, Whatsapp and similar to structure pages without writing HTML at all. You'll be using it for your documentation.
-* [Markdown guide](https://www.markdownguide.org/cheat-sheet/)
+## How to Use this Repo
+### Development Build
+Your development build only runs the frontend using the `src` and `public` folders.
+While using the development build, your app will hot reload whenever you save a file.
+**Your server will not be running on this build**
+1. Run the development build with the command `npm run develop`
+2. View the development build on localhost:3000
+
+### Production Build
+Your production build runs both the frontend and backend of your app using the `build` folder
+However, it requires you to build your app in between changes.
+1. Build your app with `npm run build`
+2. Run the production build with `npm start`
+3. View the production build on localhost:3000
