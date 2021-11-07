@@ -21,7 +21,7 @@ export default function Example({
         <div>
             <p>This is your new number: {newNumber}</p>
             <p>This is your new text: {newText}</p>
-            {children.toLowerCase()}
+            {children}
         </div>
     )
 }
