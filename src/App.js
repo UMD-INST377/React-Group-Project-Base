@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom'
 import './App.css';
 import Example from './components/example.js'
+import HooksExample from './components/hooksexample.js';
 
 /*
  * This will be your index page regardless of whether you are using 1 
@@ -15,6 +16,7 @@ function App() {
       <Example number={8} text='this is text passed through as a prop!'> 
         <p>This is a child of &lt;Example&gt;.</p>
       </Example>
+      <HooksExample />
     </div>
   );
 }
