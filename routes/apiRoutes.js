@@ -6,9 +6,25 @@ import db from '../database/initializeDB.js';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.json({message: 'Welcome to the UMD Dining API!'});
-});
+router.route('/')
+  .get((req, res) => {
+    res.json({message: 'Welcome to the UMD Dining API!'});
+  })
+  .post(async (req, res) => {
+    try {
+      console.log('Touched POST endpoint');
+      console.log(req.body);
+      const hall = await db.DiningHall.findAll({
+        where: {
+          hall_id: req.body.hall_id
+        }
+      });
+      res.json({message: hall});
+    } catch (error) {
+      console.error(error);
+      res.json({message: 'Something went wrong on the server.'});
+    }
+  });
 
 // / /////////////////////////////////
 // / ////Dining Hall Endpoints////////
