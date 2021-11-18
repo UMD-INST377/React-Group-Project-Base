@@ -10,9 +10,9 @@ router.get('/', (req, res) => {
   res.json({message: 'Welcome to the UMD Dining API!'});
 });
 
-/// /////////////////////////////////
-/// ////Dining Hall Endpoints////////
-/// /////////////////////////////////
+// / /////////////////////////////////
+// / ////Dining Hall Endpoints////////
+// / /////////////////////////////////
 router.get('/dining', async (req, res) => {
   try {
     const halls = await db.DiningHall.findAll();
@@ -91,9 +91,9 @@ router.put('/dining', async (req, res) => {
   }
 });
 
-/// /////////////////////////////////
-/// ////////Meals Endpoints//////////
-/// /////////////////////////////////
+// / /////////////////////////////////
+// / ////////Meals Endpoints//////////
+// / /////////////////////////////////
 router.get('/meals', async (req, res) => {
   try {
     const meals = await db.Meals.findAll();
@@ -138,9 +138,9 @@ router.put('/meals', async (req, res) => {
   }
 });
 
-/// /////////////////////////////////
-/// ////////Macros Endpoints/////////
-/// /////////////////////////////////
+// / /////////////////////////////////
+// / ////////Macros Endpoints/////////
+// / /////////////////////////////////
 router.get('/macros', async (req, res) => {
   try {
     const macros = await db.Macros.findAll();
@@ -193,9 +193,9 @@ router.put('/macros', async (req, res) => {
   }
 });
 
-/// /////////////////////////////////
-/// Dietary Restrictions Endpoints///
-/// /////////////////////////////////
+// / /////////////////////////////////
+// / Dietary Restrictions Endpoints///
+// / /////////////////////////////////
 router.get('/restrictions', async (req, res) => {
   try {
     const restrictions = await db.DietaryRestrictions.findAll();
@@ -220,9 +220,9 @@ router.get('/restrictions/:restriction_id', async (req, res) => {
   }
 });
 
-/// //////////////////////////////////
-/// ///////Custom SQL Endpoint////////
-/// /////////////////////////////////
+// / //////////////////////////////////
+// / ///////Custom SQL Endpoint////////
+// / /////////////////////////////////
 const macrosCustom = 'SELECT `Dining_Hall_Tracker`.`Meals`.`meal_id` AS `meal_id`,`Dining_Hall_Tracker`.`Meals`.`meal_name` AS `meal_name`,`Dining_Hall_Tracker`.`Macros`.`calories` AS `calories`,`Dining_Hall_Tracker`.`Macros`.`carbs` AS `carbs`,`Dining_Hall_Tracker`.`Macros`.`sodium` AS `sodium`,`Dining_Hall_Tracker`.`Macros`.`protein` AS `protein`,`Dining_Hall_Tracker`.`Macros`.`fat` AS `fat`,`Dining_Hall_Tracker`.`Macros`.`cholesterol` AS `cholesterol`FROM(`Dining_Hall_Tracker`.`Meals`JOIN `Dining_Hall_Tracker`.`Macros`)WHERE(`Dining_Hall_Tracker`.`Meals`.`meal_id` = `Dining_Hall_Tracker`.`Macros`.`meal_id`)';
 router.get('/table/data', async (req, res) => {
   try {
