@@ -6,7 +6,7 @@ module.exports = {
     es2020: true,
     mocha: true
   },
-  extends: ['airbnb-base'],
+  extends: ['react-app', 'airbnb-base'],
   parserOptions: {
     ecmaVersion: 11,
     sourceType: 'module'
